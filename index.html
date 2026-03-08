@@ -3,20 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Safety Tools | Seguridad Industrial</title>
+    <title>SAFETY TOOLS | SEGURIDAD INDUSTRIAL, DOTACIÓN INDUSTRIAL Y HERRAMIENTAS</title>
     <style>
         :root {
             --primary-yellow: #ffeb3b; 
             --medium-light-grey: #d1d1d1; 
-            --border-color: #dddddd;   
             --dark-grey: #1a1a1a;      
             --primary-green: #25d366;  
+            --maps-blue: #4285F4;
         }
-
         html {
             scroll-behavior: smooth;
         }
-
         body { 
             font-family: 'Segoe UI', sans-serif; 
             margin: 0; 
@@ -26,21 +24,20 @@
             color: #333; 
         }
 
-        /* --- MENÚ FIJO --- */
+        /* --- MENÚ --- */
         nav {
             background: var(--dark-grey);
             padding: 15px 5%;
             display: flex;
             justify-content: center;
             gap: 40px;
-            position: fixed; /* Siempre arriba */
+            position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
             border-bottom: 4px solid var(--primary-yellow);
             box-sizing: border-box;
         }
-
         nav a {
             color: white;
             text-decoration: none;
@@ -49,222 +46,255 @@
             font-size: 0.9rem;
             transition: 0.3s;
         }
-
         nav a:hover {
             color: var(--primary-yellow);
         }
 
-        /* --- SECCIÓN INICIO (Ajustada) --- */
+        /* --- SECCIÓN INICIO --- */
         #inicio {
-            height: 65vh; /* Altura reducida para que no sea tan gigante */
+            height: 70vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: rgba(209, 209, 209, 0.9);
-            margin-top: 50px; /* Espacio para el nav */
-            border-bottom: 6px solid var(--primary-yellow);
+            background: rgba(209, 209, 209, 0.95);
+            margin-top: 50px;
+            border-bottom: 8px solid var(--primary-yellow);
         }
-
         .logo-grande {
-            height: 200px; /* Tamaño optimizado */
+            height: 220px;
             width: auto;
             margin-bottom: 20px;
         }
-
         .eslogan-grande {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             font-weight: 900;
-            color: #1a1a1a;
+            color: #000;
             text-transform: uppercase;
-            max-width: 900px;
+            max-width: 1000px;
             padding: 0 20px;
-            line-height: 1.2;
+            line-height: 1.1;
+            letter-spacing: -1px;
         }
 
-        /* --- SECCIÓN CATÁLOGO (Con margen de scroll) --- */
+        /* --- CATÁLOGO --- */
         #catalogo {
-            scroll-margin-top: 100px; /* Esto hace que el salto caiga perfecto */
-            padding-bottom: 50px;
+            scroll-margin-top: 100px;
+            padding: 50px 0;
         }
-
         .catalog-header { 
             text-align: center; 
-            padding: 20px 40px; 
-            background: rgba(255, 255, 255, 0.95); 
+            padding: 30px; 
+            background: white; 
             border-radius: 8px;
-            margin: 50px auto 30px; 
-            width: fit-content; /* A la medida */
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin: 0 auto 40px; 
+            width: fit-content;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--primary-yellow);
         }
-
+        .catalog-header h1 {
+            margin: 0;
+            text-transform: uppercase;
+        }
         .catalog-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
             padding: 0 5%;
-            max-width: 1200px;
+            max-width: 1300px;
             margin: 0 auto;
         }
-
         .product-card {
-            background: ; 
-            padding: 20px;
-            text-align: center
+            background: white;
+            padding: 25px;
+            text-align: center;
             transition: 0.3s;
+            border-bottom: 4px solid transparent;
+            border-radius: 4px;
         }
-
         .product-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
             border-color: var(--primary-yellow);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
         }
-
         .product-image {
-            width: 150px;
-            height: 150px;
+            width: 160px;
+            height: 160px;
             object-fit: contain;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
-
-        .ws-btn {
+        .product-card h3 {
+            text-transform: uppercase;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            height: 2.5em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .whatsapp-btn {
             background: var(--primary-green);
             color: white; 
-            padding: 12px 20px;
+            padding: 12px 25px;
             text-decoration: none;
             font-weight: bold;
-            border-radius: 4px;
+            border-radius: 50px;
             display: inline-block;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            transition: 0.3s;
+        }
+        .whatsapp-btn:hover {
+            background: #1ebc56;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
         }
 
-        /* --- FOOTER / CONTACTO --- */
+        /* --- FOOTER --- */
         footer {
             background: var(--dark-grey);
             color: white;
             padding: 60px 5%;
             text-align: center;
-            scroll-margin-top: 60px;
         }
-
         .social-links { 
             display: flex; 
             justify-content: center; 
-            gap: 30px; 
-            margin: 20px 0;
+            gap: 40px; 
+            margin: 30px 0;
+            flex-wrap: wrap;
         }
-
         .social-links a { 
             color: var(--primary-yellow);
             text-decoration: none; 
-            font-weight: bold; 
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .maps-btn {
+            background: var(--maps-blue);
+            color: white !important;
+            padding: 12px 25px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 20px;
+            transition: 0.3s;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+        .maps-btn:hover {
+            background: #3367d6;
+            transform: scale(1.05);
         }
 
         @media (max-width: 768px) {
-            .logo-grande { height: 140px; }
-            .eslogan-grande { font-size: 1.4rem; }
-            nav { gap: 15px; }
-            .catalog-header { width: 80%; padding: 20px; }
+            .eslogan-grande { font-size: 1.6rem; }
+            .logo-grande { height: 150px; }
+            .social-links { gap: 20px; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="#inicio">Inicio</a>
-        <a href="#catalogo">Catálogo</a>
-        <a href="#contacto">Contacto</a>
+        <a href="#inicio">INICIO</a>
+        <a href="#catalogo">CATÁLOGO</a>
+        <a href="#contacto">CONTACTO</a>
     </nav>
 
     <section id="inicio">
-        <img src="LOGO.png" alt="Safety Tools Logo" class="logo-grande">
+        <img src="LOGO.png" alt="SAFETY TOOLS" class="logo-grande">
         <div class="eslogan-grande">
-            Seguridad Industrial, Herramientas, Dotaciones y mucho más
+            SEGURIDAD INDUSTRIAL, DOTACIÓN INDUSTRIAL Y HERRAMIENTAS
         </div>
     </section>
 
     <section id="catalogo">
         <div class="catalog-header">
-            <h1>Catálogo de Seguridad Industrial</h1>
-            <p>Selecciona un producto para pedir información inmediata</p>
+            <h1>CATÁLOGO DE PRODUCTOS</h1>
+            <p>SOLICITA TU COTIZACIÓN INMEDIATA POR WHATSAPP</p>
         </div>
 
         <div class="catalog-grid">
             <div class="product-card">
-                <img src="gafas.png" alt="Gafas" class="product-image">
-                <h3>Gafas de Seguridad</h3>
-                <a href="https://wa.me/573202971496" class="ws-btn">Pedir WhatsApp</a>
+                <img src="gafas.png" alt="GAFAS" class="product-image">
+                <h3>GAFAS DE SEGURIDAD</h3>
+                <a href="https://wa.me/573202971496" class="whatsapp-btn" target="_blank" rel="noopener">WHATSAPP</a>
             </div>
             <div class="product-card">
-                <img src="chaleco.png" alt="Chaleco" class="product-image">
-                <h3>Chaleco Reflectivo</h3>
-                <a href="https://wa.me/573202971496" class="ws-btn">Pedir WhatsApp</a>
+                <img src="chaleco.png" alt="CHALECO" class="product-image">
+                <h3>CHALECO REFLECTIVO</h3>
+                <a href="https://wa.me/573202971496" class="whatsapp-btn" target="_blank" rel="noopener">WHATSAPP</a>
             </div>
             <div class="product-card">
-                <img src="botiquin.png" alt="Botiquín" class="product-image">
-                <h3>Botiquín Tipo A</h3>
-                <a href="https://wa.me/573202971496" class="ws-btn">Pedir WhatsApp</a>
+                <img src="botiquin.png" alt="BOTIQUÍN" class="product-image">
+                <h3>BOTIQUÍN TIPO A</h3>
+                <a href="https://wa.me/573202971496" class="whatsapp-btn" target="_blank" rel="noopener">WHATSAPP</a>
             </div>
             <div class="product-card">
-                <img src="auditivos.png" alt="Auditivos" class="product-image">
-                <h3>Protectores Auditivos</h3>
-                <a href="https://wa.me/573202971496" class="ws-btn">Pedir WhatsApp</a>
+                <img src="auditivos.png" alt="AUDITIVOS" class="product-image">
+                <h3>PROTECTORES AUDITIVOS</h3>
+                <a href="https://wa.me/573202971496" class="whatsapp-btn" target="_blank" rel="noopener">WHATSAPP</a>
             </div>
             <div class="product-card">
-                <img src="guantes.png" alt="Guantes" class="product-image">
-                <h3>Guantes Industriales</h3>
-                <a href="https://wa.me/573202971496" class="ws-btn">Pedir WhatsApp</a>
+                <img src="guantes.png" alt="GUANTES" class="product-image">
+                <h3>GUANTES INDUSTRIALES</h3>
+                <a href="https://wa.me/573202971496" class="whatsapp-btn" target="_blank" rel="noopener">WHATSAPP</a>
             </div>
             <div class="product-card">
-                <img src="extintor.png" alt="Extintor" class="product-image">
-                <h3>Equipos contra incendios</h3>
-                <a href="https://wa.me/573202971496" class="ws-btn">Pedir WhatsApp</a>
+                <img src="extintor.png" alt="EXTINTOR" class="product-image">
+                <h3>EQUIPOS CONTRA INCENDIOS</h3>
+                <a href="https://wa.me/573202971496" class="whatsapp-btn" target="_blank" rel="noopener">WHATSAPP</a>
             </div>
             <div class="product-card">
-                <img src="pantalones.png" alt="Pantalon" class="product-image">
-                <h3>Pantalon jean</h3>
-                <a href="https://wa.me/573202971496" class="ws-btn">Pedir WhatsApp</a>
+                <img src="pantalones.png" alt="PANTALÓN" class="product-image">
+                <h3>PANTALÓN JEAN</h3>
+                <a href="https://wa.me/573202971496" class="whatsapp-btn" target="_blank" rel="noopener">WHATSAPP</a>
             </div>
             <div class="product-card">
-                <img src="camisas.png" alt="Camisa jean" class="product-image">
-                <h3>Camisa jean</h3>
-                <a href="https://wa.me/573202971496" class="ws-btn">Pedir WhatsApp</a>
+                <img src="camisas.png" alt="CAMISA" class="product-image">
+                <h3>CAMISA JEAN</h3>
+                <a href="https://wa.me/573202971496" class="whatsapp-btn" target="_blank" rel="noopener">WHATSAPP</a>
             </div>
             <div class="product-card">
-                <img src="botas.png" alt="Botas" class="product-image">
-                <h3>Botas de seguridad</h3>
-                <a href="https://wa.me/573202971496" class="ws-btn">Pedir WhatsApp</a>
-</div>
-
-   <div class="product-card">
-                <img src="casco.png" alt="Casco" class="product-image">
-                <h3>Cascos de seguridad</h3>
-                <a href="https://wa.me/573202971496" class="ws-btn">Pedir WhatsApp</a>
+                <img src="botas.png" alt="BOTAS" class="product-image">
+                <h3>BOTAS DE SEGURIDAD</h3>
+                <a href="https://wa.me/573202971496" class="whatsapp-btn" target="_blank" rel="noopener">WHATSAPP</a>
             </div>
-
-<div class="product-card">
-                <img src="tornillos.png" alt="Tornillo" class="product-image">
-                <h3>Tornilleria</h3>
-                <a href="https://wa.me/573202971496" class="ws-btn">Pedir WhatsApp</a>
+            <div class="product-card">
+                <img src="casco.png" alt="CASCO" class="product-image">
+                <h3>CASCOS DE SEGURIDAD</h3>
+                <a href="https://wa.me/573202971496" class="whatsapp-btn" target="_blank" rel="noopener">WHATSAPP</a>
             </div>
-
-<div class="product-card">
-                <img src="llaves.png" alt="Llave" class="product-image">
-                <h3>Herramientas</h3>
-                <a href="https://wa.me/573202971496" class="ws-btn">Pedir WhatsApp</a>
+            <div class="product-card">
+                <img src="tornillos.png" alt="TORNILLERÍA" class="product-image">
+                <h3>TORNILLERÍA</h3>
+                <a href="https://wa.me/573202971496" class="whatsapp-btn" target="_blank" rel="noopener">WHATSAPP</a>
             </div>
-
+            <div class="product-card">
+                <img src="llaves.png" alt="HERRAMIENTAS" class="product-image">
+                <h3>HERRAMIENTAS</h3>
+                <a href="https://wa.me/573202971496" class="whatsapp-btn" target="_blank" rel="noopener">WHATSAPP</a>
+            </div>
+        </div>
     </section>
 
     <footer id="contacto">
-        <h3>Contáctanos</h3>
-        <p>Suministros de alta calidad con envíos inmediatos.</p>
+        <h3>CONTÁCTANOS</h3>
+        <p>SUMINISTROS DE ALTA CALIDAD CON ENVÍOS INMEDIATOS.</p>
+        
+        <a href="https://maps.google.com/?cid=17314354226486176104&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" rel="noopener noreferrer" class="maps-btn">
+            📍 Cra. 78g Bis C #SUR No 47-12, Bogotá
+        </a>
+
         <div class="social-links">
-            <a href="https://wa.me/573202971496" target="_blank">WhatsApp</a>
-            <a href="https://www.tiktok.com/@safetytools83" target="_blank">TikTok</a>
-            <a href="https://www.instagram.com/safetytools_s" target="_blank">Instagram</a>
-            <a href="mailto:gerenciasafetytools@gmail.com">Gmail</a>
+            <a href="https://wa.me/573202971496" target="_blank" rel="noopener noreferrer">WHATSAPP</a>
+            <a href="https://www.tiktok.com/@safety.tools83" target="_blank" rel="noopener noreferrer">TIKTOK</a>
+            <a href="https://www.instagram.com/safetytool_s" target="_blank" rel="noopener noreferrer">INSTAGRAM</a>
+            <a href="mailto:gerenciasafetytools@gmail.com">GMAIL</a>
         </div>
-        <p style="opacity: 0.6; font-size: 0.8rem; margin-top: 20px;">&copy; 2026 Safety Tools. Todos los derechos reservados.</p>
+        <p style="opacity: 0.6; font-size: 0.8rem; margin-top: 20px;">© 2026 SAFETY TOOLS. TODOS LOS DERECHOS RESERVADOS.</p>
     </footer>
 
 </body>
